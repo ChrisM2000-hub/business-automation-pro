@@ -2,6 +2,19 @@ import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import logoAsset from "@/assets/chris-ai-logo.png.asset.json";
+
+function Avatar({ size = 36 }: { size?: number }) {
+  return (
+    <img
+      src={logoAsset.url}
+      alt="Chris AI"
+      style={{ width: size, height: size }}
+      className="rounded-full object-cover ring-2 ring-brand/40 bg-surface"
+    />
+  );
+}
+
 
 const SUGGESTIONS = [
   "How can Chris help my business scale?",
