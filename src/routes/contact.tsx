@@ -33,6 +33,38 @@ const BUDGETS = ["Under $2k", "$2k – $5k", "$5k – $15k", "$15k+", "Not sure 
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setSubmitting(true);
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      company: String(fd.get("company") || ""),
+      phone: String(fd.get("phone") || ""),
+      projectType: String(fd.get("projectType") || ""),
+      budget: String(fd.get("budget") || ""),
+      message: String(fd.get("message") || ""),
+    };
+    try {
+      const res = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error((await res.json()).error || "Submission failed");
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
   return (
     <>
       <Section className="!py-20 lg:!py-28">
@@ -60,38 +92,32 @@ function ContactPage() {
                 </p>
               </div>
             ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSent(true);
-                }}
-                className="space-y-6"
-              >
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid gap-6 sm:grid-cols-2">
                   <Field label="Name *">
-                    <input required type="text" className={inputCls} placeholder="Jane Doe" />
+                    <input required name="name" type="text" className={inputCls} placeholder="Jane Doe" />
                   </Field>
                   <Field label="Company">
-                    <input type="text" className={inputCls} placeholder="Acme Inc." />
+                    <input name="company" type="text" className={inputCls} placeholder="Acme Inc." />
                   </Field>
                 </div>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <Field label="Email *">
-                    <input required type="email" className={inputCls} placeholder="jane@acme.com" />
+                    <input required name="email" type="email" className={inputCls} placeholder="jane@acme.com" />
                   </Field>
                   <Field label="Phone">
-                    <input type="tel" className={inputCls} placeholder="+1 555 000 0000" />
+                    <input name="phone" type="tel" className={inputCls} placeholder="+1 555 000 0000" />
                   </Field>
                 </div>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <Field label="Project Type">
-                    <select className={inputCls} defaultValue="">
+                    <select name="projectType" className={inputCls} defaultValue="">
                       <option value="" disabled>Pick one…</option>
                       {PROJECT_TYPES.map((p) => <option key={p}>{p}</option>)}
                     </select>
                   </Field>
                   <Field label="Budget Range">
-                    <select className={inputCls} defaultValue="">
+                    <select name="budget" className={inputCls} defaultValue="">
                       <option value="" disabled>Pick one…</option>
                       {BUDGETS.map((b) => <option key={b}>{b}</option>)}
                     </select>
@@ -100,16 +126,20 @@ function ContactPage() {
                 <Field label="What are you trying to automate? *">
                   <textarea
                     required
+                    name="message"
                     rows={5}
+                    minLength={5}
                     className={inputCls + " resize-none"}
                     placeholder="Tell me about the process that's eating your time…"
                   />
                 </Field>
+                {error && <p className="text-sm text-red-400">{error}</p>}
                 <button
                   type="submit"
-                  className="inline-flex h-12 w-full items-center justify-center rounded-lg bg-brand px-6 text-sm font-semibold text-brand-foreground ring-2 ring-brand ring-offset-2 ring-offset-background transition-transform hover:scale-[1.01] sm:w-auto"
+                  disabled={submitting}
+                  className="inline-flex h-12 w-full items-center justify-center rounded-lg bg-brand px-6 text-sm font-semibold text-brand-foreground ring-2 ring-brand ring-offset-2 ring-offset-background transition-transform hover:scale-[1.01] disabled:opacity-60 sm:w-auto"
                 >
-                  Let's Build Something Smarter →
+                  {submitting ? "Sending…" : "Let's Build Something Smarter →"}
                 </button>
               </form>
             )}
