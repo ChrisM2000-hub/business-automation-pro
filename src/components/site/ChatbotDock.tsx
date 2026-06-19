@@ -53,11 +53,10 @@ export function ChatbotDock() {
             <div className="flex items-center justify-between border-b border-border px-4 py-3">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <div className="grid size-9 place-items-center rounded-full bg-brand text-brand-foreground font-display font-bold text-sm">
-                    AI
-                  </div>
+                  <Avatar size={36} />
                   <span className="absolute -bottom-0.5 -right-0.5 size-2.5 rounded-full border-2 border-surface bg-brand pulse-dot" />
                 </div>
+
                 <div>
                   <p className="text-sm font-semibold">Chris AI</p>
                   <p className="font-mono text-[10px] uppercase tracking-wider text-brand">
@@ -152,9 +151,8 @@ export function ChatbotDock() {
         onClick={() => setOpen((v) => !v)}
         className="fixed bottom-5 right-4 z-50 md:right-6 flex items-center gap-3 rounded-full bg-surface-elevated p-1.5 pr-5 ring-1 ring-border shadow-2xl backdrop-blur-xl transition-all hover:ring-brand/50"
       >
-        <div className="grid size-9 place-items-center rounded-full bg-brand text-brand-foreground font-display font-bold text-sm">
-          AI
-        </div>
+        <Avatar size={36} />
+
         <div className="text-left">
           <p className="font-mono text-[9px] font-bold uppercase tracking-[0.18em] text-brand">
             Online
@@ -174,17 +172,30 @@ function Bubble({ message }: { message: UIMessage }) {
     .map((p) => (p.type === "text" ? p.text : ""))
     .join("");
   if (!text) return null;
+
+  // Split assistant replies into separate chat bubbles per paragraph.
+  const chunks = isUser
+    ? [text]
+    : text
+        .split(/\n{2,}/)
+        .map((c) => c.trim())
+        .filter(Boolean);
+
   return (
-    <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
-      <div
-        className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
-          isUser
-            ? "rounded-br-sm bg-brand text-brand-foreground font-medium"
-            : "rounded-bl-sm bg-background text-foreground"
-        }`}
-      >
-        {text}
-      </div>
+    <div className={`flex flex-col gap-1.5 ${isUser ? "items-end" : "items-start"}`}>
+      {chunks.map((chunk, i) => (
+        <div
+          key={i}
+          className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
+            isUser
+              ? "rounded-br-sm bg-brand text-brand-foreground font-medium"
+              : "rounded-bl-sm bg-background text-foreground"
+          }`}
+        >
+          {chunk}
+        </div>
+      ))}
     </div>
   );
 }
+
