@@ -33,6 +33,38 @@ const BUDGETS = ["Under $2k", "$2k – $5k", "$5k – $15k", "$15k+", "Not sure 
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setSubmitting(true);
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      company: String(fd.get("company") || ""),
+      phone: String(fd.get("phone") || ""),
+      projectType: String(fd.get("projectType") || ""),
+      budget: String(fd.get("budget") || ""),
+      message: String(fd.get("message") || ""),
+    };
+    try {
+      const res = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error((await res.json()).error || "Submission failed");
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
   return (
     <>
       <Section className="!py-20 lg:!py-28">
