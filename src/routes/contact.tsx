@@ -92,38 +92,32 @@ function ContactPage() {
                 </p>
               </div>
             ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSent(true);
-                }}
-                className="space-y-6"
-              >
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid gap-6 sm:grid-cols-2">
                   <Field label="Name *">
-                    <input required type="text" className={inputCls} placeholder="Jane Doe" />
+                    <input required name="name" type="text" className={inputCls} placeholder="Jane Doe" />
                   </Field>
                   <Field label="Company">
-                    <input type="text" className={inputCls} placeholder="Acme Inc." />
+                    <input name="company" type="text" className={inputCls} placeholder="Acme Inc." />
                   </Field>
                 </div>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <Field label="Email *">
-                    <input required type="email" className={inputCls} placeholder="jane@acme.com" />
+                    <input required name="email" type="email" className={inputCls} placeholder="jane@acme.com" />
                   </Field>
                   <Field label="Phone">
-                    <input type="tel" className={inputCls} placeholder="+1 555 000 0000" />
+                    <input name="phone" type="tel" className={inputCls} placeholder="+1 555 000 0000" />
                   </Field>
                 </div>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <Field label="Project Type">
-                    <select className={inputCls} defaultValue="">
+                    <select name="projectType" className={inputCls} defaultValue="">
                       <option value="" disabled>Pick one…</option>
                       {PROJECT_TYPES.map((p) => <option key={p}>{p}</option>)}
                     </select>
                   </Field>
                   <Field label="Budget Range">
-                    <select className={inputCls} defaultValue="">
+                    <select name="budget" className={inputCls} defaultValue="">
                       <option value="" disabled>Pick one…</option>
                       {BUDGETS.map((b) => <option key={b}>{b}</option>)}
                     </select>
@@ -132,16 +126,20 @@ function ContactPage() {
                 <Field label="What are you trying to automate? *">
                   <textarea
                     required
+                    name="message"
                     rows={5}
+                    minLength={5}
                     className={inputCls + " resize-none"}
                     placeholder="Tell me about the process that's eating your time…"
                   />
                 </Field>
+                {error && <p className="text-sm text-red-400">{error}</p>}
                 <button
                   type="submit"
-                  className="inline-flex h-12 w-full items-center justify-center rounded-lg bg-brand px-6 text-sm font-semibold text-brand-foreground ring-2 ring-brand ring-offset-2 ring-offset-background transition-transform hover:scale-[1.01] sm:w-auto"
+                  disabled={submitting}
+                  className="inline-flex h-12 w-full items-center justify-center rounded-lg bg-brand px-6 text-sm font-semibold text-brand-foreground ring-2 ring-brand ring-offset-2 ring-offset-background transition-transform hover:scale-[1.01] disabled:opacity-60 sm:w-auto"
                 >
-                  Let's Build Something Smarter →
+                  {submitting ? "Sending…" : "Let's Build Something Smarter →"}
                 </button>
               </form>
             )}
