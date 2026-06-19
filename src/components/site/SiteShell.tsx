@@ -52,11 +52,13 @@ export function Eyebrow({ children }: { children: ReactNode }) {
   );
 }
 
+export const CALENDLY_URL = "https://calendly.com/va-chrismendez/30min?month=2026-06";
+
 export function CTAButtons() {
   return (
     <div className="flex flex-wrap gap-3">
       <a
-        href="https://calendly.com"
+        href={CALENDLY_URL}
         target="_blank"
         rel="noopener"
         className="inline-flex h-12 items-center rounded-lg bg-brand px-6 text-sm font-semibold text-brand-foreground ring-2 ring-brand ring-offset-2 ring-offset-background transition-transform hover:scale-[1.02]"
@@ -72,6 +74,7 @@ export function CTAButtons() {
     </div>
   );
 }
+
 
 // Theme toggle hook (mounted in nav)
 export function useTheme() {

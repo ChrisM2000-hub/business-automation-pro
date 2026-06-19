@@ -3,6 +3,8 @@ import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
 import { useEffect, useRef, useState } from "react";
 import { Section, Eyebrow } from "@/components/site/SiteShell";
+import logoAsset from "@/assets/chris-ai-logo.png.asset.json";
+
 
 export const Route = createFileRoute("/ai-assistant")({
   head: () => ({
@@ -90,11 +92,14 @@ function AIAssistantPage() {
             <div className="flex items-center justify-between border-b border-border bg-surface px-5 py-4">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <div className="grid size-10 place-items-center rounded-full bg-brand text-brand-foreground font-display font-bold">
-                    AI
-                  </div>
+                  <img
+                    src={logoAsset.url}
+                    alt="Chris AI"
+                    className="size-10 rounded-full object-cover ring-2 ring-brand/40"
+                  />
                   <span className="absolute -bottom-0.5 -right-0.5 size-2.5 rounded-full border-2 border-surface bg-brand pulse-dot" />
                 </div>
+
                 <div>
                   <p className="font-display text-base font-medium">Chris AI</p>
                   <p className="font-mono text-[10px] uppercase tracking-wider text-brand">
@@ -189,22 +194,37 @@ function MessageBubble({ message }: { message: UIMessage }) {
 
 function Bubble({ role, text }: { role: "user" | "assistant"; text: string }) {
   const isUser = role === "user";
+  const chunks = isUser
+    ? [text]
+    : text
+        .split(/\n{2,}/)
+        .map((c) => c.trim())
+        .filter(Boolean);
+
   return (
-    <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
-      {!isUser && (
-        <div className="grid size-7 shrink-0 place-items-center rounded-full bg-brand text-brand-foreground font-display text-[10px] font-bold mr-2 mt-0.5">
-          AI
+    <div className={`flex flex-col gap-1.5 ${isUser ? "items-end" : "items-start"}`}>
+      {chunks.map((chunk, i) => (
+        <div key={i} className={`flex ${isUser ? "justify-end" : "justify-start"} w-full`}>
+          {!isUser && i === 0 && (
+            <img
+              src={logoAsset.url}
+              alt=""
+              className="size-7 shrink-0 rounded-full object-cover mr-2 mt-0.5 ring-1 ring-brand/30"
+            />
+          )}
+          {!isUser && i > 0 && <span className="size-7 shrink-0 mr-2" aria-hidden />}
+          <div
+            className={`max-w-[80%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+              isUser
+                ? "rounded-br-sm bg-brand text-brand-foreground font-medium"
+                : "rounded-bl-sm bg-surface text-foreground border border-border"
+            }`}
+          >
+            {chunk}
+          </div>
         </div>
-      )}
-      <div
-        className={`max-w-[80%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
-          isUser
-            ? "rounded-br-sm bg-brand text-brand-foreground font-medium"
-            : "rounded-bl-sm bg-surface text-foreground border border-border"
-        }`}
-      >
-        {text}
-      </div>
+      ))}
     </div>
   );
 }
+

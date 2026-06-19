@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useTheme } from "./SiteShell";
+import logoAsset from "@/assets/chris-ai-logo.png.asset.json";
+
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -22,13 +24,16 @@ export function SiteNav() {
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/75 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-6">
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="grid size-7 place-items-center rounded-md bg-brand text-brand-foreground font-display font-bold text-sm">
-            cm
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="Christopher Mendez"
+            className="size-9 rounded-full ring-2 ring-brand/40 object-cover"
+          />
           <span className="font-display text-base font-medium tracking-tight">
             Christopher Mendez
           </span>
         </Link>
+
 
         <nav className="hidden lg:flex items-center gap-7 text-sm">
           {NAV.slice(1, 8).map((item) => (
