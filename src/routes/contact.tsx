@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Section, Eyebrow } from "@/components/site/SiteShell";
+import { Section, Eyebrow, CALENDLY_URL } from "@/components/site/SiteShell";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -155,13 +155,14 @@ function ContactPage() {
                 30 minutes. No pitch. We map your highest-leverage automation together.
               </p>
               <a
-                href="https://calendly.com"
+                href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener"
                 className="mt-5 inline-flex h-11 items-center rounded-lg bg-brand px-5 text-sm font-semibold text-brand-foreground"
               >
                 Open Calendly →
               </a>
+
             </div>
             <div className="rounded-2xl border border-border bg-surface/50 p-7">
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-brand">
