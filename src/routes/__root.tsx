@@ -92,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "AI Automation Consultant Philippines, Workflow Builder, Make.com Expert, Business Automation, Lead Generation Automation, AI Operations, Virtual Assistant Philippines",
       },
-      { property: "og:title", content: "Christopher Mendez — AI Automation Consultant" },
+      { property: "og:title", content: "Christopher Mendez — AI Automation Consultant & Workflow Builder" },
       {
         property: "og:description",
         content:
@@ -100,6 +100,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Christopher Mendez — AI Automation Consultant & Workflow Builder" },
+      { name: "description", content: "This application is a premium, responsive business website for an AI Automation Consultant." },
+      { property: "og:description", content: "This application is a premium, responsive business website for an AI Automation Consultant." },
+      { name: "twitter:description", content: "This application is a premium, responsive business website for an AI Automation Consultant." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/55b6e725-2230-43f2-938a-0b5acaa74a06/id-preview-0daf5872--55990ca5-a3b4-4b3f-b940-a302c993d927.lovable.app-1781910106246.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/55b6e725-2230-43f2-938a-0b5acaa74a06/id-preview-0daf5872--55990ca5-a3b4-4b3f-b940-a302c993d927.lovable.app-1781910106246.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
