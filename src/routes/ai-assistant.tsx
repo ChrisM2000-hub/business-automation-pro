@@ -3,6 +3,8 @@ import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
 import { useEffect, useRef, useState } from "react";
 import { Section, Eyebrow } from "@/components/site/SiteShell";
+import logoAsset from "@/assets/chris-ai-logo.png.asset.json";
+
 
 export const Route = createFileRoute("/ai-assistant")({
   head: () => ({
