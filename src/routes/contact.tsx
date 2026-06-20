@@ -230,12 +230,7 @@ function ContactPage() {
             Frequently asked
           </h2>
           <div className="mt-10 divide-y divide-border">
-            {[
-              ["How long does a typical project take?", "Most Starter engagements ship in 1–2 weeks. Professional engagements run 3–6 weeks. Enterprise audits are scoped per engagement."],
-              ["Do you work with companies outside the Philippines?", "Yes — most of my work is with US, EU, and AU clients. I run async by default with synchronous calls in your business hours."],
-              ["What if I don't know what to automate yet?", "That's literally the point of the Discovery Call. Bring the problem; I'll find the automation."],
-              ["Do you offer ongoing support?", "Yes — every engagement includes a support window, and I offer monthly retainers for teams that want continuous optimization."],
-            ].map(([q, a]) => (
+            {FAQS.map(([q, a]) => (
               <details key={q} className="group py-5">
                 <summary className="flex cursor-pointer items-center justify-between text-base font-medium">
                   <span>{q}</span>
