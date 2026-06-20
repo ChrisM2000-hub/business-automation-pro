@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "";
+const BASE_URL = "https://chris-automation-pro.lovable.app";
 
 interface SitemapEntry {
   path: string;
@@ -23,6 +23,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/ai-assistant", changefreq: "monthly", priority: "0.8" },
           { path: "/blog", changefreq: "weekly", priority: "0.7" },
           { path: "/contact", changefreq: "monthly", priority: "0.9" },
+          { path: "/api/chat", changefreq: "monthly", priority: "0.3" },
+          { path: "/api/public/contact", changefreq: "monthly", priority: "0.3" },
         ];
 
         const urls = entries.map((e) =>
