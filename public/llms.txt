@@ -1,0 +1,15 @@
+# Christopher Mendez
+
+> AI Automation Consultant & Workflow Builder based in Davao City, Philippines. Builds AI-powered workflows that save time, reduce manual work, and scale operations using Make.com, Zapier, OpenAI, and Claude.
+
+## Pages
+
+- [Home](/): Overview of services, capabilities, and featured automation work.
+- [About](/about): Background, experience, and approach to AI automation consulting.
+- [Services](/services): AI Automation, Workflow Builder, Lead Generation, Technical Support, and Virtual Assistant Operations.
+- [Tech Stack](/tech-stack): Tools used — AI, Automation, CRM, Systems, Cloud, Productivity, and Design.
+- [Portfolio](/portfolio): Demonstration automation projects and outcomes.
+- [Case Studies](/case-studies): Detailed engagement walkthroughs and results.
+- [Blog](/blog): Writing on AI automation, workflow design, operations, and productivity.
+- [AI Assistant](/ai-assistant): Chat with an AI assistant trained on Christopher's work.
+- [Contact](/contact): Book a Discovery Call or send an inquiry. Includes FAQ.
