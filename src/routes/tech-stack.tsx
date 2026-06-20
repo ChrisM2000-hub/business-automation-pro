@@ -4,7 +4,7 @@ import { Section, Eyebrow, CTAButtons } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/tech-stack")({
   head: () => ({
     meta: [
-      { title: "Tech Stack — Christopher Mendez · AI, Automation, Cloud, Systems" },
+      { title: "Tech Stack — Christopher Mendez" },
       {
         name: "description",
         content:

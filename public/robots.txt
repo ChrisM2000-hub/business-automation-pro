@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://chris-automation-pro.lovable.app/sitemap.xml
