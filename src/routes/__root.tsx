@@ -80,11 +80,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Christopher Mendez — AI Automation Consultant" },
+      { title: "Christopher Mendez — AI Automation & Workflow Builder" },
       {
         name: "description",
         content:
-          "AI-powered workflows that save time, reduce manual work, and scale operations. Make.com, Zapier, OpenAI, Claude — Davao City, Philippines.",
+          "Christopher Mendez builds AI-powered workflows that save time, reduce manual work, and scale operations. Make.com, Zapier, OpenAI, Claude — based in Davao City, Philippines.",
       },
       { name: "author", content: "Christopher Mendez" },
       {
@@ -92,8 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "AI Automation Consultant Philippines, Workflow Builder, Make.com Expert, Business Automation, Lead Generation Automation, AI Operations, Virtual Assistant Philippines",
       },
-      { property: "og:site_name", content: "Christopher Mendez" },
-      { property: "og:title", content: "Christopher Mendez — AI Automation Consultant" },
+      { property: "og:title", content: "Christopher Mendez — AI Automation & Workflow Builder" },
       {
         property: "og:description",
         content:
@@ -101,8 +100,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Christopher Mendez — AI Automation Consultant" },
-      { name: "twitter:description", content: "AI-powered workflows that save time, reduce manual work, and scale operations." },
+      { name: "twitter:title", content: "Christopher Mendez — AI Automation & Workflow Builder" },
+      { name: "description", content: "This application is a premium, responsive business website for an AI Automation Consultant." },
+      { property: "og:description", content: "This application is a premium, responsive business website for an AI Automation Consultant." },
+      { name: "twitter:description", content: "This application is a premium, responsive business website for an AI Automation Consultant." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/55b6e725-2230-43f2-938a-0b5acaa74a06/id-preview-0daf5872--55990ca5-a3b4-4b3f-b940-a302c993d927.lovable.app-1781910106246.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/55b6e725-2230-43f2-938a-0b5acaa74a06/id-preview-0daf5872--55990ca5-a3b4-4b3f-b940-a302c993d927.lovable.app-1781910106246.png" },
     ],
@@ -115,36 +116,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
       },
     ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          name: "Christopher Mendez",
-          url: "https://chris-automation-pro.lovable.app",
-          description: "AI Automation Consultant & Workflow Builder",
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Person",
-          name: "Christopher Mendez",
-          jobTitle: "AI Automation Consultant",
-          url: "https://chris-automation-pro.lovable.app",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Davao City",
-            addressCountry: "PH",
-          },
-          knowsAbout: ["AI Automation", "Make.com", "Zapier", "OpenAI", "Claude", "Workflow Design", "Lead Generation"],
-        }),
-      },
-    ],
   }),
-
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
