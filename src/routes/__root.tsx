@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Christopher Mendez — AI Automation & Workflow Builder" },
+      { title: "AI Automation & Workflow Builder" },
       {
         name: "description",
         content:
@@ -92,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "AI Automation Consultant Philippines, Workflow Builder, Make.com Expert, Business Automation, Lead Generation Automation, AI Operations, Virtual Assistant Philippines",
       },
-      { property: "og:title", content: "Christopher Mendez — AI Automation & Workflow Builder" },
+      { property: "og:title", content: "AI Automation & Workflow Builder" },
       {
         property: "og:description",
         content:
@@ -100,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Christopher Mendez — AI Automation & Workflow Builder" },
+      { name: "twitter:title", content: "AI Automation & Workflow Builder" },
       { name: "description", content: "This application is a premium, responsive business website for an AI Automation Consultant." },
       { property: "og:description", content: "This application is a premium, responsive business website for an AI Automation Consultant." },
       { name: "twitter:description", content: "This application is a premium, responsive business website for an AI Automation Consultant." },
