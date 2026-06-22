@@ -17,10 +17,17 @@ function Avatar({ size = 36 }: { size?: number }) {
 
 
 const SUGGESTIONS = [
-  "How can Chris help my business scale?",
-  "What does an AI automation project look like?",
-  "Tell me about his tech stack",
+  "What exactly is automation?",
+  "When do I actually need automation?",
+  "Workflow vs AI agent — what's the difference?",
   "I'd like to book a discovery call",
+];
+
+const INTRO_CHUNKS = [
+  "Hey 👋 I'm Chris AI — Christopher's digital business assistant.",
+  "Quick intro: **Automation** is software doing repetitive tasks for you, automatically. Set it up once, it runs forever — even while you sleep.",
+  "You need it when you're losing leads to slow replies, repeating weekly admin work, or can't scale without hiring more people.",
+  "Tell me about your business and I'll show you exactly where automation would save you the most time — then we can book a quick Discovery Call.",
 ];
 
 export function ChatbotDock() {
@@ -31,9 +38,20 @@ export function ChatbotDock() {
     transport: new DefaultChatTransport({ api: "/api/chat" }),
   });
 
+  // Auto-open the dock once per session to deliver the automation intro.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (sessionStorage.getItem("chris-ai-greeted")) return;
+    const t = setTimeout(() => {
+      setOpen(true);
+      sessionStorage.setItem("chris-ai-greeted", "1");
+    }, 2500);
+    return () => clearTimeout(t);
+  }, []);
+
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
-  }, [messages, status]);
+  }, [messages, status, open]);
 
   const isLoading = status === "submitted" || status === "streaming";
 
