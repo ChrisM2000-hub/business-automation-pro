@@ -93,12 +93,23 @@ export function ChatbotDock() {
 
             <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
               {messages.length === 0 && (
-                <div className="space-y-4">
-                  <div className="rounded-2xl rounded-tl-sm bg-background p-3.5 text-sm leading-relaxed">
-                    Hey 👋 I'm Chris AI — Christopher's digital business assistant.
-                    Ask me about his AI automation services, tech stack, or book a call.
-                  </div>
-                  <div className="space-y-2">
+                <div className="space-y-3">
+                  {INTRO_CHUNKS.map((chunk, i) => (
+                    <div
+                      key={i}
+                      className="rounded-2xl rounded-tl-sm bg-background p-3.5 text-sm leading-relaxed rise"
+                      style={{ animationDelay: `${i * 120}ms` }}
+                    >
+                      {chunk.split(/(\*\*[^*]+\*\*)/g).map((part, j) =>
+                        part.startsWith("**") && part.endsWith("**") ? (
+                          <strong key={j} className="text-brand">{part.slice(2, -2)}</strong>
+                        ) : (
+                          <span key={j}>{part}</span>
+                        )
+                      )}
+                    </div>
+                  ))}
+                  <div className="space-y-2 pt-1">
                     {SUGGESTIONS.map((s) => (
                       <button
                         key={s}
