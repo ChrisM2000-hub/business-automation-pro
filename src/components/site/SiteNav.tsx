@@ -8,11 +8,10 @@ const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
+  { to: "/automation", label: "Automation" },
   { to: "/case-studies", label: "Case Studies" },
-  { to: "/portfolio", label: "Portfolio" },
   { to: "/tech-stack", label: "Tech Stack" },
   { to: "/ai-assistant", label: "AI Assistant" },
-  { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -36,7 +35,7 @@ export function SiteNav() {
 
 
         <nav className="hidden lg:flex items-center gap-7 text-sm">
-          {NAV.slice(1, 8).map((item) => (
+          {NAV.slice(1).map((item) => (
             <Link
               key={item.to}
               to={item.to}
