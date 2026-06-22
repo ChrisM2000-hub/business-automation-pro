@@ -17,10 +17,17 @@ function Avatar({ size = 36 }: { size?: number }) {
 
 
 const SUGGESTIONS = [
-  "How can Chris help my business scale?",
-  "What does an AI automation project look like?",
-  "Tell me about his tech stack",
+  "What exactly is automation?",
+  "When do I actually need automation?",
+  "Workflow vs AI agent — what's the difference?",
   "I'd like to book a discovery call",
+];
+
+const INTRO_CHUNKS = [
+  "Hey 👋 I'm Chris AI — Christopher's digital business assistant.",
+  "Quick intro: **Automation** is software doing repetitive tasks for you, automatically. Set it up once, it runs forever — even while you sleep.",
+  "You need it when you're losing leads to slow replies, repeating weekly admin work, or can't scale without hiring more people.",
+  "Tell me about your business and I'll show you exactly where automation would save you the most time — then we can book a quick Discovery Call.",
 ];
 
 export function ChatbotDock() {
@@ -31,9 +38,20 @@ export function ChatbotDock() {
     transport: new DefaultChatTransport({ api: "/api/chat" }),
   });
 
+  // Auto-open the dock once per session to deliver the automation intro.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (sessionStorage.getItem("chris-ai-greeted")) return;
+    const t = setTimeout(() => {
+      setOpen(true);
+      sessionStorage.setItem("chris-ai-greeted", "1");
+    }, 2500);
+    return () => clearTimeout(t);
+  }, []);
+
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
-  }, [messages, status]);
+  }, [messages, status, open]);
 
   const isLoading = status === "submitted" || status === "streaming";
 
@@ -75,12 +93,23 @@ export function ChatbotDock() {
 
             <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
               {messages.length === 0 && (
-                <div className="space-y-4">
-                  <div className="rounded-2xl rounded-tl-sm bg-background p-3.5 text-sm leading-relaxed">
-                    Hey 👋 I'm Chris AI — Christopher's digital business assistant.
-                    Ask me about his AI automation services, tech stack, or book a call.
-                  </div>
-                  <div className="space-y-2">
+                <div className="space-y-3">
+                  {INTRO_CHUNKS.map((chunk, i) => (
+                    <div
+                      key={i}
+                      className="rounded-2xl rounded-tl-sm bg-background p-3.5 text-sm leading-relaxed rise"
+                      style={{ animationDelay: `${i * 120}ms` }}
+                    >
+                      {chunk.split(/(\*\*[^*]+\*\*)/g).map((part, j) =>
+                        part.startsWith("**") && part.endsWith("**") ? (
+                          <strong key={j} className="text-brand">{part.slice(2, -2)}</strong>
+                        ) : (
+                          <span key={j}>{part}</span>
+                        )
+                      )}
+                    </div>
+                  ))}
+                  <div className="space-y-2 pt-1">
                     {SUGGESTIONS.map((s) => (
                       <button
                         key={s}
