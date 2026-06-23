@@ -9,18 +9,20 @@ import logoAsset from "@/assets/chris-ai-logo.png.asset.json";
 export const Route = createFileRoute("/ai-assistant")({
   head: () => ({
     meta: [
-      { title: "Chris AI — Talk to My Digital Business Assistant" },
+      { title: "Chris AI | Free AI Automation Assistant & Consultant Chat" },
       {
         name: "description",
         content:
-          "Chat with Chris AI — Christopher Mendez's digital business assistant. Ask about services, get automation recommendations, or book a Discovery Call.",
+          "Chat with Chris AI — a free AI assistant that explains automation, recommends workflows, and helps you scope your first AI agent or Make.com build.",
       },
-      { property: "og:title", content: "Chris AI — Christopher Mendez" },
+      { property: "og:title", content: "Chris AI — Automation Assistant" },
+      { property: "og:url", content: "https://chris-automation-pro.lovable.app/ai-assistant" },
       {
         property: "og:description",
         content: "Talk to my digital business assistant about AI automation.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/ai-assistant" }],
   }),
   component: AIAssistantPage,
 });

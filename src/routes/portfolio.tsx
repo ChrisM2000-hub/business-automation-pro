@@ -5,18 +5,20 @@ import { Section, Eyebrow } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Christopher Mendez · Cross-Discipline Work" },
+      { title: "Portfolio | AI Automation & Workflow Projects" },
       {
         name: "description",
         content:
-          "Selected work across AI Automation, Workflow Design, Technical Support, Community Management, and Graphic Design.",
+          "Selected automation work: Make.com & Zapier pipelines, AI agents, lead generation systems, CRM automations, technical support, and design.",
       },
       { property: "og:title", content: "Portfolio — Christopher Mendez" },
+      { property: "og:url", content: "https://chris-automation-pro.lovable.app/portfolio" },
       {
         property: "og:description",
         content: "Selected work across AI, workflows, IT, and design.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/portfolio" }],
   }),
   component: PortfolioPage,
 });

@@ -4,19 +4,22 @@ import { Section, Eyebrow, CTAButtons, CALENDLY_URL } from "@/components/site/Si
 export const Route = createFileRoute("/automation")({
   head: () => ({
     meta: [
-      { title: "Automation & AI Agents — Why It Matters" },
+      { title: "What Is Business Automation? Workflows vs AI Agents Guide" },
       {
         name: "description",
         content:
-          "What automation is, why your business needs it, and when to use a workflow vs an AI agent. Real examples, ROI breakdown, and a path to your first system.",
+          "Business automation explained: what it is, why you need it, and when to use a workflow vs an AI agent. Real ROI examples, use cases, and how to start your first system.",
       },
-      { property: "og:title", content: "Automation & AI Agents — Christopher Mendez" },
+      { name: "keywords", content: "what is business automation, workflow vs AI agent, automation for small business, AI agents explained, Make.com vs Zapier, business process automation, automation ROI, when to automate" },
+      { property: "og:title", content: "What Is Business Automation? Workflows vs AI Agents" },
+      { property: "og:url", content: "https://chris-automation-pro.lovable.app/automation" },
       {
         property: "og:description",
         content:
           "Stop drowning in repetitive tasks. Learn how automation and AI agents save hours, capture leads, and grow revenue 24/7.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/automation" }],
     scripts: [
       {
         type: "application/ld+json",

@@ -4,18 +4,21 @@ import { Section, Eyebrow } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog — AI Automation & Workflow Design · C. Mendez" },
+      { title: "AI Automation Blog | Make.com, Zapier & Workflow Insights" },
       {
         name: "description",
         content:
-          "Writing on AI automation, workflow design, business operations, lead generation, productivity, and technology.",
+          "Articles on AI automation, workflow design, Make.com, Zapier, n8n, lead generation, business operations, and how to scale with AI agents.",
       },
-      { property: "og:title", content: "Blog — Christopher Mendez" },
+      { name: "keywords", content: "AI automation blog, Make.com tutorials, Zapier guides, workflow automation tips, AI agents, business operations" },
+      { property: "og:title", content: "AI Automation Blog — Christopher Mendez" },
+      { property: "og:url", content: "https://chris-automation-pro.lovable.app/blog" },
       {
         property: "og:description",
         content: "Writing on AI automation, workflows, and operations.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/blog" }],
   }),
   component: BlogPage,
 });

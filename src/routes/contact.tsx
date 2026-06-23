@@ -12,18 +12,20 @@ const FAQS: Array<[string, string]> = [
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Christopher Mendez" },
+      { title: "Contact — Hire an AI Automation Consultant | Free Call" },
       {
         name: "description",
         content:
-          "Book a Discovery Call or send an inquiry. Christopher Mendez — AI Automation Consultant based in Davao City, Philippines.",
+          "Book a free Discovery Call with Christopher Mendez — AI automation consultant, Make.com & Zapier expert. Workflow audits, AI agents, lead generation systems.",
       },
-      { property: "og:title", content: "Contact — Christopher Mendez" },
+      { property: "og:title", content: "Contact Christopher Mendez — AI Automation Consultant" },
+      { property: "og:url", content: "https://chris-automation-pro.lovable.app/contact" },
       {
         property: "og:description",
-        content: "Book a Discovery Call or send an inquiry.",
+        content: "Book a free Discovery Call or send an inquiry.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/contact" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -192,7 +194,7 @@ function ContactPage() {
               <ul className="mt-4 space-y-3 text-sm">
                 <li className="flex items-center justify-between">
                   <span className="text-muted-foreground">LinkedIn</span>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener" className="text-foreground hover:text-brand">@christophermendez →</a>
+                  <a href="https://www.linkedin.com/in/mendez-christopher/" target="_blank" rel="noopener" className="text-foreground hover:text-brand">@mendez-christopher →</a>
                 </li>
                 <li className="flex items-center justify-between">
                   <span className="text-muted-foreground">Upwork</span>

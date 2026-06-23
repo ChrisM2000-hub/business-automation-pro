@@ -90,20 +90,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "keywords",
         content:
-          "AI Automation Consultant Philippines, Workflow Builder, Make.com Expert, Business Automation, Lead Generation Automation, AI Operations, Virtual Assistant Philippines",
+          "AI automation consultant, Make.com expert, Zapier expert, n8n developer, workflow automation, business process automation, AI agent developer, lead generation automation, virtual assistant Philippines, OpenAI integration, Claude API, hire automation expert, automation freelancer Philippines, Davao City automation",
       },
       { property: "og:title", content: "AI Automation & Workflow Builder" },
-      {
-        property: "og:description",
-        content:
-          "AI-powered workflows that save time, reduce manual work, and scale operations.",
-      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Christopher Mendez" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "AI Automation & Workflow Builder" },
-      { name: "description", content: "This application is a premium, responsive business website for an AI Automation Consultant." },
-      { property: "og:description", content: "This application is a premium, responsive business website for an AI Automation Consultant." },
-      { name: "twitter:description", content: "This application is a premium, responsive business website for an AI Automation Consultant." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/55b6e725-2230-43f2-938a-0b5acaa74a06/id-preview-0daf5872--55990ca5-a3b4-4b3f-b940-a302c993d927.lovable.app-1781910106246.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/55b6e725-2230-43f2-938a-0b5acaa74a06/id-preview-0daf5872--55990ca5-a3b4-4b3f-b940-a302c993d927.lovable.app-1781910106246.png" },
     ],
@@ -114,6 +107,63 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://chris-automation-pro.lovable.app/#website",
+              url: "https://chris-automation-pro.lovable.app/",
+              name: "Christopher Mendez — AI Automation Consultant",
+              inLanguage: "en",
+            },
+            {
+              "@type": "Person",
+              "@id": "https://chris-automation-pro.lovable.app/#person",
+              name: "Christopher Mendez",
+              jobTitle: "AI Automation Consultant & Workflow Builder",
+              url: "https://chris-automation-pro.lovable.app/",
+              sameAs: [
+                "https://www.linkedin.com/in/mendez-christopher/",
+              ],
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Davao City",
+                addressCountry: "PH",
+              },
+              knowsAbout: [
+                "AI Automation",
+                "Make.com",
+                "Zapier",
+                "n8n",
+                "OpenAI",
+                "Anthropic Claude",
+                "Workflow Design",
+                "Lead Generation",
+                "Virtual Assistance",
+              ],
+            },
+            {
+              "@type": "ProfessionalService",
+              "@id": "https://chris-automation-pro.lovable.app/#service",
+              name: "Christopher Mendez — AI Automation Services",
+              provider: { "@id": "https://chris-automation-pro.lovable.app/#person" },
+              areaServed: "Worldwide",
+              serviceType: [
+                "AI Automation",
+                "Workflow Building",
+                "Lead Generation Systems",
+                "Virtual Assistant Operations",
+                "Technical Support",
+              ],
+            },
+          ],
+        }),
       },
     ],
   }),

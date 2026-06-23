@@ -4,18 +4,20 @@ import { Section, Eyebrow, CTAButtons } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
     meta: [
-      { title: "Case Studies — AI Automation Outcomes · Christopher Mendez" },
+      { title: "Case Studies | AI Automation Results & ROI Examples" },
       {
         name: "description",
         content:
-          "Real-world automation projects: lead generation pipelines, AI email assistants, client onboarding workflows. Demonstration projects showing methodology and outcomes.",
+          "Real automation case studies: lead generation pipelines, AI email assistants, client onboarding workflows. See methodology, stack, and measurable outcomes.",
       },
       { property: "og:title", content: "Case Studies — Christopher Mendez" },
+      { property: "og:url", content: "https://chris-automation-pro.lovable.app/case-studies" },
       {
         property: "og:description",
         content: "AI automation projects with measurable operational outcomes.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/case-studies" }],
   }),
   component: CaseStudiesPage,
 });
