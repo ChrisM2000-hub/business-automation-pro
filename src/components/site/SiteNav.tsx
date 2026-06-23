@@ -25,11 +25,11 @@ export function SiteNav() {
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
           <img
             src={logoAsset.url}
-            alt="Christopher Mendez"
+            alt="AI Automation & Workflow Expert"
             className="size-9 rounded-full ring-2 ring-brand/40 object-cover"
           />
           <span className="font-display text-base font-medium tracking-tight">
-            Christopher Mendez
+            Automate Your Business with AI
           </span>
         </Link>
 
