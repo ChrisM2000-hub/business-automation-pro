@@ -4,18 +4,20 @@ import { Section, Eyebrow, CTAButtons } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Christopher Mendez · AI Automation Consultant" },
+      { title: "About Christopher Mendez | AI Automation Consultant" },
       {
         name: "description",
         content:
-          "From IT helpdesk to AI workflow architect — Christopher Mendez's journey building automation systems for modern businesses.",
+          "From IT helpdesk to AI workflow architect. Christopher Mendez — automation consultant, Make.com & Zapier expert based in Davao City, serving clients globally.",
       },
-      { property: "og:title", content: "About — Christopher Mendez" },
+      { property: "og:title", content: "About Christopher Mendez — AI Automation Consultant" },
+      { property: "og:url", content: "https://chris-automation-pro.lovable.app/about" },
       {
         property: "og:description",
         content: "From IT helpdesk to AI workflow architect.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/about" }],
   }),
   component: AboutPage,
 });
