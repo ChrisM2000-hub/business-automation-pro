@@ -4,18 +4,21 @@ import { Section, Eyebrow, CTAButtons } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — AI Automation & Workflow Building" },
+      { title: "AI Automation Services | Workflow Builder & Make.com Expert" },
       {
         name: "description",
         content:
-          "Full-stack automation services: AI Automation, Workflow Builder, Lead Generation Systems, Technical Support, and Virtual Assistant Operations.",
+          "AI automation services: workflow building, lead generation systems, AI agents, technical support, and virtual assistant operations. Make.com, Zapier, n8n, OpenAI & Claude.",
       },
-      { property: "og:title", content: "Services — Christopher Mendez" },
+      { name: "keywords", content: "AI automation services, workflow builder, Make.com services, Zapier automation, lead generation systems, AI agent development, virtual assistant services, business automation Philippines" },
+      { property: "og:title", content: "AI Automation & Workflow Services — Christopher Mendez" },
+      { property: "og:url", content: "https://chris-automation-pro.lovable.app/services" },
       {
         property: "og:description",
         content: "AI Automation, Workflow Building, Lead Generation, IT Support, VA Operations.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/services" }],
     scripts: [
       {
         type: "application/ld+json",
