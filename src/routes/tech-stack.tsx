@@ -4,18 +4,20 @@ import { Section, Eyebrow, CTAButtons } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/tech-stack")({
   head: () => ({
     meta: [
-      { title: "Tech Stack — Christopher Mendez" },
+      { title: "Tech Stack | Make.com, Zapier, n8n, OpenAI & Claude Expert" },
       {
         name: "description",
         content:
-          "The full tech stack: AI (OpenAI, Claude, Gemini), Automation (Make, Zapier), CRM, Systems (Windows Server, VMware), Cloud, Productivity, and Design tools.",
+          "The automation tech stack: OpenAI, Claude, Gemini, Make.com, Zapier, n8n, Salesforce, GoHighLevel, ClickUp, Windows Server, VMware, AWS, GCP.",
       },
       { property: "og:title", content: "Tech Stack — Christopher Mendez" },
+      { property: "og:url", content: "https://chris-automation-pro.lovable.app/tech-stack" },
       {
         property: "og:description",
         content: "AI, Automation, CRM, Systems, Cloud, Productivity, and Design tools.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/tech-stack" }],
   }),
   component: TechStackPage,
 });
