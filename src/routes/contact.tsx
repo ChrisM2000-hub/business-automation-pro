@@ -192,7 +192,7 @@ function ContactPage() {
               <ul className="mt-4 space-y-3 text-sm">
                 <li className="flex items-center justify-between">
                   <span className="text-muted-foreground">LinkedIn</span>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener" className="text-foreground hover:text-brand">@christophermendez →</a>
+                  <a href="https://www.linkedin.com/in/mendez-christopher/" target="_blank" rel="noopener" className="text-foreground hover:text-brand">@mendez-christopher →</a>
                 </li>
                 <li className="flex items-center justify-between">
                   <span className="text-muted-foreground">Upwork</span>
