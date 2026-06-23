@@ -4,18 +4,21 @@ import { Section, Eyebrow, CTAButtons } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Christopher Mendez — AI Automation Consultant" },
+      { title: "AI Automation Consultant | Make.com & Zapier Expert" },
       {
         name: "description",
         content:
-          "I build AI-powered workflows that save time, reduce manual work, and scale operations. Make.com, Zapier, OpenAI, Claude — based in Davao City, Philippines.",
+          "Hire an AI automation consultant and workflow builder. Make.com, Zapier, n8n, OpenAI & Claude experts helping businesses save 10+ hours/week and capture more leads.",
       },
-      { property: "og:title", content: "Christopher Mendez — AI Automation Consultant" },
+      { name: "keywords", content: "AI automation consultant, Make.com expert, Zapier expert, n8n developer, workflow automation, business process automation, AI agent developer, lead generation automation, virtual assistant Philippines, OpenAI integration, Claude API, automation freelancer, Make.com freelancer, hire automation expert" },
+      { property: "og:title", content: "AI Automation Consultant | Make.com & Zapier Expert" },
+      { property: "og:url", content: "https://chris-automation-pro.lovable.app/" },
       {
         property: "og:description",
-        content: "AI-powered workflows that save time, reduce manual work, and scale operations.",
+        content: "AI-powered workflows that save 10+ hours/week. Make.com, Zapier, OpenAI, Claude — Christopher Mendez.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/" }],
   }),
   component: HomePage,
 });
