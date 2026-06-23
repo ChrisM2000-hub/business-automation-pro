@@ -71,7 +71,7 @@ export function SiteFooter() {
               </button>
             </form>
             <div className="mt-6 flex gap-4 text-sm">
-              <a href="https://linkedin.com" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/mendez-christopher/" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">LinkedIn</a>
               <a href="https://upwork.com" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">Upwork</a>
               <a href="https://onlinejobs.ph" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">OnlineJobs</a>
             </div>
