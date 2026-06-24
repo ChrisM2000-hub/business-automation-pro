@@ -46,6 +46,7 @@ export function ChatbotDock() {
     if (sessionStorage.getItem("chris-ai-greeted")) return;
     const t = setTimeout(() => {
       setOpen(true);
+      trackChatOpen();
       sessionStorage.setItem("chris-ai-greeted", "1");
     }, 2500);
     return () => clearTimeout(t);
@@ -61,9 +62,11 @@ export function ChatbotDock() {
   const submit = (text?: string) => {
     const value = (text ?? input).trim();
     if (!value || isLoading) return;
+    trackChatMessage();
     sendMessage({ text: value });
     setInput("");
   };
+
 
   return (
     <>
