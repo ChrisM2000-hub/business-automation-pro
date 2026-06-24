@@ -1,10 +1,40 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouter } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { SiteNav } from "./SiteNav";
 import { SiteFooter } from "./SiteFooter";
 import { ChatbotDock } from "./ChatbotDock";
+import { track, trackBookCall } from "@/lib/analytics";
 
 export function SiteShell({ children }: { children: ReactNode }) {
+  const router = useRouter();
+
+  // SPA page_view tracking
+  useEffect(() => {
+    const unsub = router.subscribe("onResolved", () => {
+      const path = window.location.pathname + window.location.search;
+      track("page_view", {
+        page_path: path,
+        page_location: window.location.href,
+        page_title: document.title,
+      });
+    });
+    return () => unsub();
+  }, [router]);
+
+  // Global Calendly click delegation
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement | null)?.closest?.("a");
+      if (!target) return;
+      const href = target.getAttribute("href") || "";
+      if (href.includes("calendly.com")) {
+        trackBookCall(window.location.pathname);
+      }
+    };
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-background text-foreground antialiased">
       <BackgroundGrid />
@@ -15,6 +45,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
     </div>
   );
 }
+
 
 function BackgroundGrid() {
   return (
