@@ -90,11 +90,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "keywords",
         content:
-          "AI automation consultant, Make.com expert, Zapier expert, n8n developer, workflow automation, business process automation, AI agent developer, lead generation automation, virtual assistant Philippines, OpenAI integration, Claude API, hire automation expert, automation freelancer Philippines, Davao City automation",
+          "AI automation consultant, workflow automation expert, business process automation, Make.com expert, Zapier expert, n8n developer, AI agent developer, CRM automation, lead generation automation, AI integration consultant, operations automation, process automation consultant, small business automation, business systems consultant, business efficiency consultant, remote automation consultant, AI workflow builder, automation agency alternative",
       },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "googlebot", content: "index, follow" },
+      { name: "format-detection", content: "telephone=no" },
+      { name: "theme-color", content: "#0a0a0a" },
       { property: "og:title", content: "AI Automation & Workflow Builder" },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Christopher Mendez" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:site_name", content: "Christopher Mendez — AI Automation Consultant" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "AI Automation & Workflow Builder" },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/55b6e725-2230-43f2-938a-0b5acaa74a06/id-preview-0daf5872--55990ca5-a3b4-4b3f-b940-a302c993d927.lovable.app-1781910106246.png" },
