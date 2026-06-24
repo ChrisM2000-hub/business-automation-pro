@@ -13,19 +13,18 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
+        const today = new Date().toISOString().slice(0, 10);
         const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/about", changefreq: "monthly", priority: "0.8" },
-          { path: "/services", changefreq: "monthly", priority: "0.9" },
-          { path: "/automation", changefreq: "monthly", priority: "0.9" },
-          { path: "/case-studies", changefreq: "monthly", priority: "0.8" },
-          { path: "/portfolio", changefreq: "monthly", priority: "0.7" },
-          { path: "/tech-stack", changefreq: "monthly", priority: "0.6" },
-          { path: "/ai-assistant", changefreq: "monthly", priority: "0.8" },
-          { path: "/blog", changefreq: "weekly", priority: "0.7" },
-          { path: "/contact", changefreq: "monthly", priority: "0.9" },
-          { path: "/api/chat", changefreq: "monthly", priority: "0.3" },
-          { path: "/api/public/contact", changefreq: "monthly", priority: "0.3" },
+          { path: "/", changefreq: "weekly", priority: "1.0", lastmod: today },
+          { path: "/services", changefreq: "monthly", priority: "0.9", lastmod: today },
+          { path: "/automation", changefreq: "monthly", priority: "0.9", lastmod: today },
+          { path: "/contact", changefreq: "monthly", priority: "0.9", lastmod: today },
+          { path: "/case-studies", changefreq: "monthly", priority: "0.8", lastmod: today },
+          { path: "/about", changefreq: "monthly", priority: "0.8", lastmod: today },
+          { path: "/ai-assistant", changefreq: "monthly", priority: "0.8", lastmod: today },
+          { path: "/portfolio", changefreq: "monthly", priority: "0.7", lastmod: today },
+          { path: "/blog", changefreq: "weekly", priority: "0.7", lastmod: today },
+          { path: "/tech-stack", changefreq: "monthly", priority: "0.6", lastmod: today },
         ];
 
         const urls = entries.map((e) =>
