@@ -11,13 +11,13 @@ export const Route = createFileRoute("/about")({
           "From IT helpdesk to AI workflow architect. Christopher Mendez — automation consultant, Make.com & Zapier expert based in Davao City, serving clients globally.",
       },
       { property: "og:title", content: "About Christopher Mendez — AI Automation Consultant" },
-      { property: "og:url", content: "https://chris-automation-pro.lovable.app/about" },
+      { property: "og:url", content: "https://business-automation-pro.lovable.app/about" },
       {
         property: "og:description",
         content: "From IT helpdesk to AI workflow architect.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/about" }],
+    links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/about" }],
   }),
   component: AboutPage,
 });

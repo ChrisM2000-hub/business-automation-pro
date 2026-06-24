@@ -12,13 +12,13 @@ export const Route = createFileRoute("/blog")({
       },
       { name: "keywords", content: "AI automation blog, Make.com tutorials, Zapier guides, workflow automation tips, AI agents, business operations" },
       { property: "og:title", content: "AI Automation Blog — Christopher Mendez" },
-      { property: "og:url", content: "https://chris-automation-pro.lovable.app/blog" },
+      { property: "og:url", content: "https://business-automation-pro.lovable.app/blog" },
       {
         property: "og:description",
         content: "Writing on AI automation, workflows, and operations.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/blog" }],
+    links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/blog" }],
   }),
   component: BlogPage,
 });

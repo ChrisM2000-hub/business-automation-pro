@@ -12,13 +12,13 @@ export const Route = createFileRoute("/")({
       },
       { name: "keywords", content: "AI automation consultant, Make.com expert, Zapier expert, n8n developer, workflow automation, business process automation, AI agent developer, lead generation automation, virtual assistant Philippines, OpenAI integration, Claude API, automation freelancer, Make.com freelancer, hire automation expert" },
       { property: "og:title", content: "AI Automation Consultant | Make.com & Zapier Expert" },
-      { property: "og:url", content: "https://chris-automation-pro.lovable.app/" },
+      { property: "og:url", content: "https://business-automation-pro.lovable.app/" },
       {
         property: "og:description",
         content: "AI-powered workflows that save 10+ hours/week. Make.com, Zapier, OpenAI, Claude — Christopher Mendez.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/" }],
   }),
   component: HomePage,
 });

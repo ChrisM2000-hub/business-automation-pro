@@ -11,13 +11,13 @@ export const Route = createFileRoute("/case-studies")({
           "Real automation case studies: lead generation pipelines, AI email assistants, client onboarding workflows. See methodology, stack, and measurable outcomes.",
       },
       { property: "og:title", content: "Case Studies — Christopher Mendez" },
-      { property: "og:url", content: "https://chris-automation-pro.lovable.app/case-studies" },
+      { property: "og:url", content: "https://business-automation-pro.lovable.app/case-studies" },
       {
         property: "og:description",
         content: "AI automation projects with measurable operational outcomes.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/case-studies" }],
+    links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/case-studies" }],
   }),
   component: CaseStudiesPage,
 });
