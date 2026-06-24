@@ -182,7 +182,7 @@ export function ChatbotDock() {
       )}
 
       <button
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => setOpen((v) => { if (!v) trackChatOpen(); return !v; })}
         className="fixed bottom-5 right-4 z-50 md:right-6 flex items-center gap-3 rounded-full bg-surface-elevated p-1.5 pr-5 ring-1 ring-border shadow-2xl backdrop-blur-xl transition-all hover:ring-brand/50"
       >
         <Avatar size={36} />
