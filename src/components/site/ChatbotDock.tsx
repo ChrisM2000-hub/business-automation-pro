@@ -3,6 +3,8 @@ import { DefaultChatTransport, type UIMessage } from "ai";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/chris-ai-logo.png.asset.json";
+import { trackChatOpen, trackChatMessage } from "@/lib/analytics";
+
 
 function Avatar({ size = 36 }: { size?: number }) {
   return (
