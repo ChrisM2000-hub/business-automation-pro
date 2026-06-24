@@ -7,6 +7,7 @@ interface SitemapEntry {
   path: string;
   changefreq?: "weekly" | "monthly" | "daily";
   priority?: string;
+  lastmod?: string;
 }
 
 export const Route = createFileRoute("/sitemap.xml")({
