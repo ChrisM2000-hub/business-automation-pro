@@ -1,6 +1,13 @@
 import { Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { trackNewsletterSignup } from "@/lib/analytics";
+
+
 
 export function SiteFooter() {
+  const [email, setEmail] = useState("");
+  const [joined, setJoined] = useState(false);
+
   return (
     <footer className="relative border-t border-border bg-surface/30">
       <div className="mx-auto max-w-7xl px-6 py-20">
