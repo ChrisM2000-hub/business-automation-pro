@@ -16,13 +16,13 @@ export const Route = createFileRoute("/ai-assistant")({
           "Chat with Chris AI — a free AI assistant that explains automation, recommends workflows, and helps you scope your first AI agent or Make.com build.",
       },
       { property: "og:title", content: "Chris AI — Automation Assistant" },
-      { property: "og:url", content: "https://chris-automation-pro.lovable.app/ai-assistant" },
+      { property: "og:url", content: "https://business-automation-pro.lovable.app/ai-assistant" },
       {
         property: "og:description",
         content: "Talk to my digital business assistant about AI automation.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/ai-assistant" }],
+    links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/ai-assistant" }],
   }),
   component: AIAssistantPage,
 });

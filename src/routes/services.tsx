@@ -12,13 +12,13 @@ export const Route = createFileRoute("/services")({
       },
       { name: "keywords", content: "AI automation services, workflow builder, Make.com services, Zapier automation, lead generation systems, AI agent development, virtual assistant services, business automation Philippines" },
       { property: "og:title", content: "AI Automation & Workflow Services — Christopher Mendez" },
-      { property: "og:url", content: "https://chris-automation-pro.lovable.app/services" },
+      { property: "og:url", content: "https://business-automation-pro.lovable.app/services" },
       {
         property: "og:description",
         content: "AI Automation, Workflow Building, Lead Generation, IT Support, VA Operations.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/services" }],
+    links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/services" }],
     scripts: [
       {
         type: "application/ld+json",

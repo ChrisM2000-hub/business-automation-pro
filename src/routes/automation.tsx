@@ -12,14 +12,14 @@ export const Route = createFileRoute("/automation")({
       },
       { name: "keywords", content: "what is business automation, workflow vs AI agent, automation for small business, AI agents explained, Make.com vs Zapier, business process automation, automation ROI, when to automate" },
       { property: "og:title", content: "What Is Business Automation? Workflows vs AI Agents" },
-      { property: "og:url", content: "https://chris-automation-pro.lovable.app/automation" },
+      { property: "og:url", content: "https://business-automation-pro.lovable.app/automation" },
       {
         property: "og:description",
         content:
           "Stop drowning in repetitive tasks. Learn how automation and AI agents save hours, capture leads, and grow revenue 24/7.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/automation" }],
+    links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/automation" }],
     scripts: [
       {
         type: "application/ld+json",

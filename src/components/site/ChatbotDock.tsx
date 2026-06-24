@@ -3,6 +3,8 @@ import { DefaultChatTransport, type UIMessage } from "ai";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/chris-ai-logo.png.asset.json";
+import { trackChatOpen, trackChatMessage } from "@/lib/analytics";
+
 
 function Avatar({ size = 36 }: { size?: number }) {
   return (
@@ -44,6 +46,7 @@ export function ChatbotDock() {
     if (sessionStorage.getItem("chris-ai-greeted")) return;
     const t = setTimeout(() => {
       setOpen(true);
+      trackChatOpen();
       sessionStorage.setItem("chris-ai-greeted", "1");
     }, 2500);
     return () => clearTimeout(t);
@@ -59,9 +62,11 @@ export function ChatbotDock() {
   const submit = (text?: string) => {
     const value = (text ?? input).trim();
     if (!value || isLoading) return;
+    trackChatMessage();
     sendMessage({ text: value });
     setInput("");
   };
+
 
   return (
     <>
@@ -177,7 +182,7 @@ export function ChatbotDock() {
       )}
 
       <button
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => setOpen((v) => { if (!v) trackChatOpen(); return !v; })}
         className="fixed bottom-5 right-4 z-50 md:right-6 flex items-center gap-3 rounded-full bg-surface-elevated p-1.5 pr-5 ring-1 ring-border shadow-2xl backdrop-blur-xl transition-all hover:ring-brand/50"
       >
         <Avatar size={36} />

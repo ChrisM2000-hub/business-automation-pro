@@ -19,13 +19,13 @@ export const Route = createFileRoute("/contact")({
           "Book a free Discovery Call with Christopher Mendez — AI automation consultant, Make.com & Zapier expert. Workflow audits, AI agents, lead generation systems.",
       },
       { property: "og:title", content: "Contact Christopher Mendez — AI Automation Consultant" },
-      { property: "og:url", content: "https://chris-automation-pro.lovable.app/contact" },
+      { property: "og:url", content: "https://business-automation-pro.lovable.app/contact" },
       {
         property: "og:description",
         content: "Book a free Discovery Call or send an inquiry.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://chris-automation-pro.lovable.app/contact" }],
+    links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/contact" }],
     scripts: [
       {
         type: "application/ld+json",

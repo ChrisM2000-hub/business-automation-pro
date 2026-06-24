@@ -110,6 +110,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
     scripts: [
+      // Google Analytics 4
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-2D3SG4LRFF",
+        async: true,
+      },
+      {
+        children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+gtag('js', new Date());
+gtag('config', 'G-2D3SG4LRFF', { send_page_view: true });`,
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -117,17 +129,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@graph": [
             {
               "@type": "WebSite",
-              "@id": "https://chris-automation-pro.lovable.app/#website",
-              url: "https://chris-automation-pro.lovable.app/",
+              "@id": "https://business-automation-pro.lovable.app/#website",
+              url: "https://business-automation-pro.lovable.app/",
               name: "Christopher Mendez — AI Automation Consultant",
               inLanguage: "en",
             },
             {
               "@type": "Person",
-              "@id": "https://chris-automation-pro.lovable.app/#person",
+              "@id": "https://business-automation-pro.lovable.app/#person",
               name: "Christopher Mendez",
               jobTitle: "AI Automation Consultant & Workflow Builder",
-              url: "https://chris-automation-pro.lovable.app/",
+              url: "https://business-automation-pro.lovable.app/",
               sameAs: [
                 "https://www.linkedin.com/in/mendez-christopher/",
               ],
@@ -150,9 +162,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             },
             {
               "@type": "ProfessionalService",
-              "@id": "https://chris-automation-pro.lovable.app/#service",
+              "@id": "https://business-automation-pro.lovable.app/#service",
               name: "Christopher Mendez — AI Automation Services",
-              provider: { "@id": "https://chris-automation-pro.lovable.app/#person" },
+              provider: { "@id": "https://business-automation-pro.lovable.app/#person" },
               areaServed: "Worldwide",
               serviceType: [
                 "AI Automation",
@@ -166,6 +178,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         }),
       },
     ],
+
   }),
   shellComponent: RootShell,
   component: RootComponent,
