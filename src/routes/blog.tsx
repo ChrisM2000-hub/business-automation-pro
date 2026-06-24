@@ -4,21 +4,40 @@ import { Section, Eyebrow } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "AI Automation Blog | Make.com, Zapier & Workflow Insights" },
+      { title: "AI Automation Blog | Workflow, Make.com & Zapier Insights" },
       {
         name: "description",
         content:
-          "Articles on AI automation, workflow design, Make.com, Zapier, n8n, lead generation, business operations, and how to scale with AI agents.",
+          "Articles on AI automation, workflow design, Make.com, Zapier, n8n, CRM automation, lead generation, business operations, and scaling with AI agents.",
       },
-      { name: "keywords", content: "AI automation blog, Make.com tutorials, Zapier guides, workflow automation tips, AI agents, business operations" },
+      { name: "keywords", content: "AI automation blog, Make.com tutorials, Zapier guides, n8n tutorials, workflow automation tips, AI agents, business operations, CRM automation guide, lead generation automation" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
       { property: "og:title", content: "AI Automation Blog — Christopher Mendez" },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: "https://business-automation-pro.lovable.app/blog" },
+      { property: "og:locale", content: "en_US" },
       {
         property: "og:description",
         content: "Writing on AI automation, workflows, and operations.",
       },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "AI Automation Blog" },
+      { name: "twitter:description", content: "AI automation, workflow design, and operations insights." },
     ],
     links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/blog" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          url: "https://business-automation-pro.lovable.app/blog",
+          name: "AI Automation Blog — Christopher Mendez",
+          inLanguage: "en",
+          author: { "@type": "Person", name: "Christopher Mendez" },
+        }),
+      },
+    ],
   }),
   component: BlogPage,
 });

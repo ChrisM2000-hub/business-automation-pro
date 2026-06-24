@@ -4,21 +4,40 @@ import { Section, Eyebrow, CTAButtons } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AI Automation Consultant | Make.com & Zapier Expert" },
+      { title: "AI Automation Consultant | Workflow & Make.com Expert" },
       {
         name: "description",
         content:
-          "Hire an AI automation consultant and workflow builder. Make.com, Zapier, n8n, OpenAI & Claude experts helping businesses save 10+ hours/week and capture more leads.",
+          "AI Automation Consultant & Workflow Builder for businesses worldwide. Make.com, Zapier, n8n, OpenAI, Claude — save 10+ hours/week, capture more leads, automate operations 24/7.",
       },
-      { name: "keywords", content: "AI automation consultant, Make.com expert, Zapier expert, n8n developer, workflow automation, business process automation, AI agent developer, lead generation automation, virtual assistant Philippines, OpenAI integration, Claude API, automation freelancer, Make.com freelancer, hire automation expert" },
-      { property: "og:title", content: "AI Automation Consultant | Make.com & Zapier Expert" },
+      { name: "keywords", content: "AI automation consultant, workflow automation expert, business process automation, Make.com expert, Zapier expert, n8n developer, AI agent developer, CRM automation, lead generation automation, AI integration consultant, operations automation, process automation consultant, small business automation, AI workflow builder, remote automation consultant, business systems consultant, business efficiency consultant, automation agency alternative" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "googlebot", content: "index, follow" },
+      { property: "og:title", content: "AI Automation Consultant | Workflow & Make.com Expert" },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: "https://business-automation-pro.lovable.app/" },
+      { property: "og:locale", content: "en_US" },
       {
         property: "og:description",
         content: "AI-powered workflows that save 10+ hours/week. Make.com, Zapier, OpenAI, Claude — Christopher Mendez.",
       },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "AI Automation Consultant | Workflow & Make.com Expert" },
+      { name: "twitter:description", content: "AI-powered workflows that save 10+ hours/week. Make.com, Zapier, OpenAI, Claude." },
     ],
     links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://business-automation-pro.lovable.app/" },
+          ],
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });

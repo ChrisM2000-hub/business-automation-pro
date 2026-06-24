@@ -9,16 +9,36 @@ export const Route = createFileRoute("/portfolio")({
       {
         name: "description",
         content:
-          "Selected automation work: Make.com & Zapier pipelines, AI agents, lead generation systems, CRM automations, technical support, and design.",
+          "Selected automation work: Make.com & Zapier pipelines, AI agents, lead generation systems, CRM automations, technical support, and design — for international clients.",
       },
-      { property: "og:title", content: "Portfolio — Christopher Mendez" },
+      { name: "keywords", content: "AI automation portfolio, workflow automation projects, Make.com projects, Zapier portfolio, AI agent projects, CRM automation portfolio" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:title", content: "Portfolio — AI Automation & Workflow Projects" },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: "https://business-automation-pro.lovable.app/portfolio" },
+      { property: "og:locale", content: "en_US" },
       {
         property: "og:description",
         content: "Selected work across AI, workflows, IT, and design.",
       },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Portfolio — AI Automation Projects" },
+      { name: "twitter:description", content: "Selected automation, AI agent, and workflow work." },
     ],
     links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/portfolio" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://business-automation-pro.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://business-automation-pro.lovable.app/portfolio" },
+          ],
+        }),
+      },
+    ],
   }),
   component: PortfolioPage,
 });

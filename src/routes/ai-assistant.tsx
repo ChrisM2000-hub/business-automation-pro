@@ -9,18 +9,25 @@ import logoAsset from "@/assets/chris-ai-logo.png.asset.json";
 export const Route = createFileRoute("/ai-assistant")({
   head: () => ({
     meta: [
-      { title: "Chris AI | Free AI Automation Assistant & Consultant Chat" },
+      { title: "Chris AI | Free AI Automation Assistant Chat" },
       {
         name: "description",
         content:
-          "Chat with Chris AI — a free AI assistant that explains automation, recommends workflows, and helps you scope your first AI agent or Make.com build.",
+          "Chat with Chris AI — a free AI assistant that explains business automation, recommends workflows, and helps you scope your first AI agent or Make.com build.",
       },
-      { property: "og:title", content: "Chris AI — Automation Assistant" },
+      { name: "keywords", content: "AI automation chat, free automation consultant chat, AI agent demo, workflow recommendation AI, Make.com Zapier advice" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Chris AI — Free Automation Assistant" },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: "https://business-automation-pro.lovable.app/ai-assistant" },
+      { property: "og:locale", content: "en_US" },
       {
         property: "og:description",
         content: "Talk to my digital business assistant about AI automation.",
       },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Chris AI — Free Automation Assistant" },
+      { name: "twitter:description", content: "Get free automation advice from Chris AI." },
     ],
     links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/ai-assistant" }],
   }),

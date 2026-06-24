@@ -12,18 +12,25 @@ const FAQS: Array<[string, string]> = [
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Hire an AI Automation Consultant | Free Call" },
+      { title: "Contact | Hire an AI Automation Consultant — Free Call" },
       {
         name: "description",
         content:
-          "Book a free Discovery Call with Christopher Mendez — AI automation consultant, Make.com & Zapier expert. Workflow audits, AI agents, lead generation systems.",
+          "Book a free 30-min Discovery Call with an AI Automation Consultant. Workflow audits, AI agents, CRM automation, lead generation systems. Worldwide remote engagements.",
       },
-      { property: "og:title", content: "Contact Christopher Mendez — AI Automation Consultant" },
+      { name: "keywords", content: "hire AI automation consultant, book automation discovery call, Make.com expert for hire, Zapier consultant, workflow automation services, AI agent developer for hire, CRM automation consultant" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Contact — Hire an AI Automation Consultant" },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: "https://business-automation-pro.lovable.app/contact" },
+      { property: "og:locale", content: "en_US" },
       {
         property: "og:description",
         content: "Book a free Discovery Call or send an inquiry.",
       },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Contact — Hire an AI Automation Consultant" },
+      { name: "twitter:description", content: "Book a free 30-min Discovery Call." },
     ],
     links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/contact" }],
     scripts: [
@@ -31,12 +38,28 @@ export const Route = createFileRoute("/contact")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: FAQS.map(([q, a]) => ({
-            "@type": "Question",
-            name: q,
-            acceptedAnswer: { "@type": "Answer", text: a },
-          })),
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://business-automation-pro.lovable.app/" },
+                { "@type": "ListItem", position: 2, name: "Contact", item: "https://business-automation-pro.lovable.app/contact" },
+              ],
+            },
+            {
+              "@type": "ContactPage",
+              url: "https://business-automation-pro.lovable.app/contact",
+              name: "Contact Christopher Mendez",
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: FAQS.map(([q, a]) => ({
+                "@type": "Question",
+                name: q,
+                acceptedAnswer: { "@type": "Answer", text: a },
+              })),
+            },
+          ],
         }),
       },
     ],

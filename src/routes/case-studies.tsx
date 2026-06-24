@@ -8,16 +8,36 @@ export const Route = createFileRoute("/case-studies")({
       {
         name: "description",
         content:
-          "Real automation case studies: lead generation pipelines, AI email assistants, client onboarding workflows. See methodology, stack, and measurable outcomes.",
+          "AI automation case studies: lead generation pipelines, AI email assistants, client onboarding workflows, CRM automation. See methodology, stack, and measurable ROI.",
       },
-      { property: "og:title", content: "Case Studies — Christopher Mendez" },
+      { name: "keywords", content: "AI automation case studies, workflow automation results, Make.com case study, Zapier ROI examples, lead generation automation case study, CRM automation results, AI agent case study" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:title", content: "Case Studies — AI Automation Results" },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: "https://business-automation-pro.lovable.app/case-studies" },
+      { property: "og:locale", content: "en_US" },
       {
         property: "og:description",
         content: "AI automation projects with measurable operational outcomes.",
       },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "AI Automation Case Studies" },
+      { name: "twitter:description", content: "Real automation projects with measurable ROI." },
     ],
     links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/case-studies" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://business-automation-pro.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://business-automation-pro.lovable.app/case-studies" },
+          ],
+        }),
+      },
+    ],
   }),
   component: CaseStudiesPage,
 });

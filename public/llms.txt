@@ -1,15 +1,47 @@
-# Christopher Mendez
+# Christopher Mendez — AI Automation & Workflow Consultant
 
-> AI Automation Consultant & Workflow Builder based in Davao City, Philippines. Builds AI-powered workflows that save time, reduce manual work, and scale operations using Make.com, Zapier, OpenAI, and Claude.
+> International AI Automation Consultant, Workflow Builder, and Business Process Automation expert. Helps small businesses, agencies, coaches, consultants, and service businesses worldwide automate operations using Make.com, Zapier, n8n, OpenAI, Claude, and Gemini. Based in Davao City, Philippines — serving US, EU, UK, AU, and CA clients remotely.
+
+## What He Does
+
+- **AI Automation Consulting** — designing and building AI agents that read context, decide, and act (OpenAI GPT-4o, Anthropic Claude 3.5, Google Gemini, function calling).
+- **Workflow Automation** — Make.com, Zapier, n8n pipelines that remove repetitive admin work, sync data across tools, and run 24/7.
+- **Business Process Automation (BPA)** — end-to-end operational systems for lead capture, qualification, onboarding, fulfillment, billing, and reporting.
+- **CRM Automation** — Salesforce, GoHighLevel, HubSpot, Mailchimp, Flodesk — pipeline automation, lead routing, lifecycle sequences.
+- **Lead Generation Systems** — multi-source prospecting (Apollo, LinkedIn Sales Navigator, inbound forms) with AI scoring and CRM sync.
+- **AI Integration** — connecting ChatGPT, Claude, Gemini, and custom LLM workflows into existing business tools.
+- **Operations & Virtual Assistance** — AI-augmented inbox, calendar, research, documentation, and reporting workflows.
+- **Technical Support & Systems** — Active Directory, Hyper-V, VMware, Windows Server, AWS, GCP.
+
+## Who He Works With
+
+- Small and growing businesses (US, EU, UK, AU, CA)
+- Agencies (marketing, recruiting, real estate, creative)
+- Coaches, consultants, online educators
+- Local service businesses (cleaning, salons, contractors)
+- Startups & founders drowning in manual ops
+- Recruiters running high-volume outbound
 
 ## Pages
 
-- [Home](/): Overview of services, capabilities, and featured automation work.
-- [About](/about): Background, experience, and approach to AI automation consulting.
-- [Services](/services): AI Automation, Workflow Builder, Lead Generation, Technical Support, and Virtual Assistant Operations.
-- [Tech Stack](/tech-stack): Tools used — AI, Automation, CRM, Systems, Cloud, Productivity, and Design.
-- [Portfolio](/portfolio): Demonstration automation projects and outcomes.
-- [Case Studies](/case-studies): Detailed engagement walkthroughs and results.
-- [Blog](/blog): Writing on AI automation, workflow design, operations, and productivity.
-- [AI Assistant](/ai-assistant): Chat with an AI assistant trained on Christopher's work.
-- [Contact](/contact): Book a Discovery Call or send an inquiry. Includes FAQ.
+- [Home](/): AI automation consultant positioning, services overview, capabilities.
+- [About](/about): Background — IT support → systems admin → operations → AI automation.
+- [Services](/services): AI Automation, Workflow Builder, Lead Generation, Technical Support, Virtual Assistant Operations.
+- [Automation](/automation): What automation is, workflow vs AI agent explainer, ROI math, real use cases.
+- [Tech Stack](/tech-stack): AI, Automation, CRM, Systems, Cloud, Productivity, Design tools.
+- [Portfolio](/portfolio): Selected automation projects across categories.
+- [Case Studies](/case-studies): Lead generation pipelines, AI email assistants, onboarding workflows with measurable outcomes.
+- [Blog](/blog): AI automation, workflow design, operations, productivity articles.
+- [AI Assistant](/ai-assistant): Chat with Chris AI — explains automation and recommends services.
+- [Contact](/contact): Book a free Discovery Call (Calendly) or send an inquiry. Includes FAQ.
+
+## Engagement
+
+- Free 30-min Discovery Call: https://calendly.com/va-chrismendez/30min
+- LinkedIn: https://www.linkedin.com/in/mendez-christopher/
+- Tiers: Starter (1–2 weeks) · Professional (3–6 weeks) · Enterprise (scoped)
+- Works async by default; synchronous calls in client business hours.
+
+## Keywords / Topical Authority
+
+AI automation consultant · workflow automation expert · business process automation · Make.com expert · Zapier expert · n8n developer · AI agent developer · CRM automation · lead generation automation · AI integration consultant · operations automation · process automation consultant · small business automation · workflow design services · AI workflow builder · remote automation consultant · business systems consultant · business efficiency consultant.
