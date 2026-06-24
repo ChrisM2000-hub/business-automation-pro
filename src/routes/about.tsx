@@ -4,20 +4,40 @@ import { Section, Eyebrow, CTAButtons } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Christopher Mendez | AI Automation Consultant" },
+      { title: "About | AI Automation Consultant & Workflow Expert" },
       {
         name: "description",
         content:
-          "From IT helpdesk to AI workflow architect. Christopher Mendez — automation consultant, Make.com & Zapier expert based in Davao City, serving clients globally.",
+          "From IT helpdesk to AI workflow architect. Christopher Mendez — AI automation consultant and workflow builder serving businesses in the US, EU, UK, AU, and worldwide.",
       },
-      { property: "og:title", content: "About Christopher Mendez — AI Automation Consultant" },
+      { name: "keywords", content: "about Christopher Mendez, AI automation consultant background, workflow automation expert, remote automation consultant, Make.com Zapier expert experience" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:title", content: "About — AI Automation Consultant & Workflow Expert" },
+      { property: "og:type", content: "profile" },
       { property: "og:url", content: "https://business-automation-pro.lovable.app/about" },
+      { property: "og:locale", content: "en_US" },
       {
         property: "og:description",
-        content: "From IT helpdesk to AI workflow architect.",
+        content: "From IT helpdesk to AI workflow architect — serving clients globally.",
       },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "About — AI Automation Consultant" },
+      { name: "twitter:description", content: "From IT helpdesk to AI workflow architect." },
     ],
     links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://business-automation-pro.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "About", item: "https://business-automation-pro.lovable.app/about" },
+          ],
+        }),
+      },
+    ],
   }),
   component: AboutPage,
 });

@@ -8,16 +8,22 @@ export const Route = createFileRoute("/automation")({
       {
         name: "description",
         content:
-          "Business automation explained: what it is, why you need it, and when to use a workflow vs an AI agent. Real ROI examples, use cases, and how to start your first system.",
+          "Business Process Automation explained: what it is, when to use a workflow vs an AI agent, real ROI examples, and how to start. Make.com, Zapier, n8n, OpenAI, Claude.",
       },
-      { name: "keywords", content: "what is business automation, workflow vs AI agent, automation for small business, AI agents explained, Make.com vs Zapier, business process automation, automation ROI, when to automate" },
+      { name: "keywords", content: "what is business automation, business process automation, workflow vs AI agent, automation for small business, AI agents explained, Make.com vs Zapier, automation ROI, when to automate, AI workflow builder, AI integration consultant, process automation consultant" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
       { property: "og:title", content: "What Is Business Automation? Workflows vs AI Agents" },
+      { property: "og:type", content: "article" },
       { property: "og:url", content: "https://business-automation-pro.lovable.app/automation" },
+      { property: "og:locale", content: "en_US" },
       {
         property: "og:description",
         content:
           "Stop drowning in repetitive tasks. Learn how automation and AI agents save hours, capture leads, and grow revenue 24/7.",
       },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "What Is Business Automation? Workflows vs AI Agents" },
+      { name: "twitter:description", content: "Workflow vs AI agent explained, with ROI math and real use cases." },
     ],
     links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/automation" }],
     scripts: [
@@ -25,31 +31,67 @@ export const Route = createFileRoute("/automation")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: [
+          "@graph": [
             {
-              "@type": "Question",
-              name: "What is automation in simple terms?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Automation is when software does a repetitive task for you automatically. You set it up once and it runs on its own — like a machine on a production line.",
-              },
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://business-automation-pro.lovable.app/" },
+                { "@type": "ListItem", position: 2, name: "Automation Guide", item: "https://business-automation-pro.lovable.app/automation" },
+              ],
             },
             {
-              "@type": "Question",
-              name: "What is the difference between a workflow and an AI agent?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "A workflow follows fixed steps every time. An AI agent reads the situation, thinks, and decides the best next step on its own. Workflows are predictable; agents are adaptive.",
-              },
+              "@type": "Article",
+              headline: "What Is Business Automation? Workflows vs AI Agents",
+              description: "A practical guide to business automation, workflows vs AI agents, ROI, and real use cases.",
+              author: { "@type": "Person", name: "Christopher Mendez", url: "https://business-automation-pro.lovable.app/about" },
+              publisher: { "@type": "Person", name: "Christopher Mendez" },
+              mainEntityOfPage: "https://business-automation-pro.lovable.app/automation",
+              inLanguage: "en",
             },
             {
-              "@type": "Question",
-              name: "When does a business need automation?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "When you're losing leads to slow replies, repeating the same admin work weekly, making manual errors, or unable to scale without hiring. Automation pays for itself in hours saved and revenue captured.",
-              },
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What is automation in simple terms?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Automation is when software does a repetitive task for you automatically. You set it up once and it runs on its own — like a machine on a production line.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What is the difference between a workflow and an AI agent?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "A workflow follows fixed steps every time. An AI agent reads the situation, thinks, and decides the best next step on its own. Workflows are predictable; agents are adaptive.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "When does a business need automation?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "When you're losing leads to slow replies, repeating the same admin work weekly, making manual errors, or unable to scale without hiring. Automation pays for itself in hours saved and revenue captured.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How much does business automation cost?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Pricing is scoped after a free Discovery Call. Starter projects ship in 1–2 weeks, Professional engagements run 3–6 weeks, Enterprise audits are custom-scoped. ROI typically pays back in weeks through hours saved and leads captured.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Which is better — Make.com, Zapier, or n8n?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Zapier is fastest for simple linear automations. Make.com is best for complex multi-branch workflows and lower run costs at scale. n8n is best when you need self-hosting, custom code nodes, or full data ownership. The right tool depends on the use case — covered on a Discovery Call.",
+                  },
+                },
+              ],
             },
           ],
         }),

@@ -8,16 +8,36 @@ export const Route = createFileRoute("/tech-stack")({
       {
         name: "description",
         content:
-          "The automation tech stack: OpenAI, Claude, Gemini, Make.com, Zapier, n8n, Salesforce, GoHighLevel, ClickUp, Windows Server, VMware, AWS, GCP.",
+          "The automation tech stack: OpenAI, Claude, Gemini, Make.com, Zapier, n8n, Salesforce, GoHighLevel, HubSpot, ClickUp, Windows Server, VMware, AWS, GCP.",
       },
-      { property: "og:title", content: "Tech Stack — Christopher Mendez" },
+      { name: "keywords", content: "Make.com expert, Zapier expert, n8n developer, OpenAI integration, Claude API, Gemini integration, Salesforce automation, GoHighLevel automation, HubSpot automation, automation tech stack" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Tech Stack — Make.com, Zapier, n8n, OpenAI, Claude" },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: "https://business-automation-pro.lovable.app/tech-stack" },
+      { property: "og:locale", content: "en_US" },
       {
         property: "og:description",
         content: "AI, Automation, CRM, Systems, Cloud, Productivity, and Design tools.",
       },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Tech Stack — Automation Tools" },
+      { name: "twitter:description", content: "Make.com, Zapier, n8n, OpenAI, Claude, Gemini, CRMs, Cloud." },
     ],
     links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/tech-stack" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://business-automation-pro.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Tech Stack", item: "https://business-automation-pro.lovable.app/tech-stack" },
+          ],
+        }),
+      },
+    ],
   }),
   component: TechStackPage,
 });

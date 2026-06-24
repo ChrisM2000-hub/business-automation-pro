@@ -4,19 +4,25 @@ import { Section, Eyebrow, CTAButtons } from "@/components/site/SiteShell";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "AI Automation Services | Workflow Builder & Make.com Expert" },
+      { title: "AI Automation Services | Workflow Builder & CRM Automation" },
       {
         name: "description",
         content:
-          "AI automation services: workflow building, lead generation systems, AI agents, technical support, and virtual assistant operations. Make.com, Zapier, n8n, OpenAI & Claude.",
+          "AI Automation services for businesses worldwide: workflow building, lead generation systems, AI agents, CRM automation, business process automation. Make.com, Zapier, n8n, OpenAI, Claude.",
       },
-      { name: "keywords", content: "AI automation services, workflow builder, Make.com services, Zapier automation, lead generation systems, AI agent development, virtual assistant services, business automation Philippines" },
+      { name: "keywords", content: "AI automation services, workflow builder, Make.com services, Zapier automation, n8n consultant, lead generation systems, AI agent development, CRM automation, business process automation services, AI integration services, process automation consultant, small business automation services, workflow design services" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
       { property: "og:title", content: "AI Automation & Workflow Services — Christopher Mendez" },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: "https://business-automation-pro.lovable.app/services" },
+      { property: "og:locale", content: "en_US" },
       {
         property: "og:description",
-        content: "AI Automation, Workflow Building, Lead Generation, IT Support, VA Operations.",
+        content: "AI Automation, Workflow Building, Lead Generation, CRM Automation, IT Support, VA Operations.",
       },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "AI Automation & Workflow Services" },
+      { name: "twitter:description", content: "AI Automation, Workflow, Lead Gen, CRM, IT Support, VA Operations." },
     ],
     links: [{ rel: "canonical", href: "https://business-automation-pro.lovable.app/services" }],
     scripts: [
@@ -24,13 +30,25 @@ export const Route = createFileRoute("/services")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "ItemList",
-          itemListElement: [
-            { "@type": "Service", name: "AI Automation", provider: { "@type": "Person", name: "Christopher Mendez" } },
-            { "@type": "Service", name: "Workflow Builder", provider: { "@type": "Person", name: "Christopher Mendez" } },
-            { "@type": "Service", name: "Lead Generation Systems", provider: { "@type": "Person", name: "Christopher Mendez" } },
-            { "@type": "Service", name: "Technical Support", provider: { "@type": "Person", name: "Christopher Mendez" } },
-            { "@type": "Service", name: "Virtual Assistant Operations", provider: { "@type": "Person", name: "Christopher Mendez" } },
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://business-automation-pro.lovable.app/" },
+                { "@type": "ListItem", position: 2, name: "Services", item: "https://business-automation-pro.lovable.app/services" },
+              ],
+            },
+            {
+              "@type": "ItemList",
+              itemListElement: [
+                { "@type": "Service", name: "AI Automation", serviceType: "AI Automation Consulting", areaServed: "Worldwide", provider: { "@type": "Person", name: "Christopher Mendez" } },
+                { "@type": "Service", name: "Workflow Builder", serviceType: "Workflow Automation", areaServed: "Worldwide", provider: { "@type": "Person", name: "Christopher Mendez" } },
+                { "@type": "Service", name: "Lead Generation Systems", serviceType: "Lead Generation Automation", areaServed: "Worldwide", provider: { "@type": "Person", name: "Christopher Mendez" } },
+                { "@type": "Service", name: "CRM Automation", serviceType: "CRM Automation", areaServed: "Worldwide", provider: { "@type": "Person", name: "Christopher Mendez" } },
+                { "@type": "Service", name: "Technical Support", serviceType: "IT Support", areaServed: "Worldwide", provider: { "@type": "Person", name: "Christopher Mendez" } },
+                { "@type": "Service", name: "Virtual Assistant Operations", serviceType: "Operations Support", areaServed: "Worldwide", provider: { "@type": "Person", name: "Christopher Mendez" } },
+              ],
+            },
           ],
         }),
       },
