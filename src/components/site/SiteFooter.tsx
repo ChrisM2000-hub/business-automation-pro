@@ -65,18 +65,28 @@ export function SiteFooter() {
               One automation idea every other week. No fluff.
             </p>
             <form
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (!email.includes("@")) return;
+                trackNewsletterSignup(email.split("@")[1]?.toLowerCase());
+                setJoined(true);
+                setEmail("");
+              }}
               className="mt-4 flex items-center gap-2 rounded-lg border border-border bg-background p-1.5"
             >
               <input
                 type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@company.com"
                 className="flex-1 bg-transparent px-2 py-1.5 text-sm placeholder:text-muted-foreground/60 focus:outline-none"
               />
               <button className="rounded-md bg-brand px-3 py-1.5 text-xs font-semibold text-brand-foreground">
-                Join
+                {joined ? "✓ Joined" : "Join"}
               </button>
             </form>
+
             <div className="mt-6 flex gap-4 text-sm">
               <a href="https://www.linkedin.com/in/mendez-christopher/" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">LinkedIn</a>
               <a href="https://upwork.com" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">Upwork</a>
