@@ -110,6 +110,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
     scripts: [
+      // Google Analytics 4
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-2D3SG4LRFF",
+        async: true,
+      },
+      {
+        children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+gtag('js', new Date());
+gtag('config', 'G-2D3SG4LRFF', { send_page_view: true });`,
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -166,6 +178,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         }),
       },
     ],
+
   }),
   shellComponent: RootShell,
   component: RootComponent,
