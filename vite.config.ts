@@ -5,8 +5,13 @@ import tsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   plugins: [
-    TanStackRouterVite(),
+    TanStackRouterVite({ autoCodeSplitting: true }),
     react(),
     tsConfigPaths(),
   ],
+  build: {
+    rollupOptions: {
+      input: './index.html',
+    },
+  },
 })
