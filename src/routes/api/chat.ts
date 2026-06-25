@@ -1,36 +1,112 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { convertToModelMessages, streamText, type UIMessage } from "ai";
-import { createLovableAiGatewayProvider } from "@/lib/ai-gateway.server";
-import { CHRIS_SYSTEM_PROMPT } from "@/lib/chris-prompt";
+import { json, type H3Event } from 'h3'
+import { Groq } from 'groq-sdk'
 
-type ChatRequestBody = { messages?: unknown };
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY,
+})
 
-export const Route = createFileRoute("/api/chat")({
-  server: {
-    handlers: {
-      POST: async ({ request }) => {
-        const { messages } = (await request.json()) as ChatRequestBody;
-        if (!Array.isArray(messages)) {
-          return new Response("Messages are required", { status: 400 });
-        }
+interface ChatMessage {
+  role: 'user' | 'assistant'
+  content: string
+}
 
-        const key = process.env.LOVABLE_API_KEY;
-        if (!key) {
-          return new Response("Missing LOVABLE_API_KEY", { status: 500 });
-        }
+interface ChatRequest {
+  messages: ChatMessage[]
+}
 
-        const gateway = createLovableAiGatewayProvider(key);
-        const model = gateway("google/gemini-3-flash-preview");
-        const result = streamText({
-          model,
-          system: CHRIS_SYSTEM_PROMPT,
-          messages: await convertToModelMessages(messages as UIMessage[]),
-        });
+const systemPrompt = `You are Chris AI, a helpful business automation assistant created by Christopher Mendez. 
+Christopher is an AI automation consultant and workflow builder specializing in:
+- AI automation using Make.com, Zapier, n8n
+- Business process automation
+- Workflow design and optimization
+- Lead generation systems
+- CRM automation
+- AI agent development
+- Technical support and infrastructure
 
-        return result.toUIMessageStreamResponse({
-          originalMessages: messages as UIMessage[],
-        });
-      },
-    },
-  },
-});
+You should:
+1. Answer questions about automation, workflows, and AI agents
+2. Provide practical examples and use cases
+3. Recommend appropriate services based on the user's needs
+4. Be friendly, professional, and helpful
+5. When appropriate, suggest booking a free Discovery Call
+6. Mention that Christopher is based in Davao City, Philippines and works with clients worldwide
+
+Available services:
+- AI Automation: Build intelligent automations using AI models
+- Workflow Builder: Design efficient processes that eliminate manual work
+- Lead Generation Systems: Build repeatable lead generation engines
+- Technical Support: Remote IT support and infrastructure management
+- Virtual Assistant Operations: Administrative support enhanced with AI
+
+Keep responses concise and conversational. Use markdown for better readability.`
+
+export default defineEventHandler(async (event: H3Event) => {
+  if (event.node.req.method !== 'POST') {
+    throw createError({
+      statusCode: 405,
+      statusMessage: 'Method not allowed',
+    })
+  }
+
+  try {
+    const body = await readBody<ChatRequest>(event)
+
+    if (!body.messages || !Array.isArray(body.messages)) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: 'Missing or invalid messages array',
+      })
+    }
+
+    // Format messages for Groq API
+    const formattedMessages = body.messages.map((msg) => ({
+      role: msg.role as 'user' | 'assistant',
+      content: msg.content,
+    }))
+
+    // Call Groq API
+    const response = await groq.chat.completions.create({
+      model: 'mixtral-8x7b-32768', // Free model available on Groq
+      messages: [
+        {
+          role: 'system',
+          content: systemPrompt,
+        },
+        ...formattedMessages,
+      ],
+      max_tokens: 1024,
+      temperature: 0.7,
+    })
+
+    const assistantMessage =
+      response.choices[0]?.message?.content || 'I apologize, but I could not generate a response.'
+
+    return json({
+      role: 'assistant',
+      content: assistantMessage,
+    })
+  } catch (error) {
+    console.error('Chat API error:', error)
+
+    if (error instanceof Error) {
+      if (error.message.includes('API key')) {
+        throw createError({
+          statusCode: 500,
+          statusMessage: 'Groq API key not configured',
+        })
+      }
+      if (error.message.includes('rate')) {
+        throw createError({
+          statusCode: 429,
+          statusMessage: 'Rate limit exceeded, please try again later',
+        })
+      }
+    }
+
+    throw createError({
+      statusCode: 500,
+      statusMessage: 'Failed to process chat message',
+    })
+  }
+})
